@@ -35,4 +35,7 @@ class CNNtoRNN(nn.Module):
 class Vocabulary:
     def __init__(self, freq_threshold):
         self.itos = {0: "<PAD>", 1: "<SOS>", 2: "<EOS>", 3: "<UNK>"}
+
         self.stoi = {"<PAD>": 0, "<SOS>": 1, "<EOS>": 2, "<UNK>": 3}
+    def __len__(self):
+        return len(self.itos)
